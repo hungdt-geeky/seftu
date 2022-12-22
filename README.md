@@ -1,24 +1,57 @@
-# README
+# SEFTU
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+SEFTU is self-development project
 
-Things you may want to cover:
+## Code Status
 
-* Ruby version
+## Documentation
 
-* System dependencies
+## Platform
 
-* Configuration
+- Ubuntu
+- Ruby 3.0.1 or higher
+- Ruby on Rails 7.0.3
+- Mysql 8.0
+- ...
 
-* Database creation
+## Installation (Auto)
 
-* Database initialization
+## Installation (Ubuntu 22.04)
+### Clone the repository (master)
 
-* How to run the test suite
+```shell
+git clone git@github.com:damhung0113/seftu.git
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Check your Ruby version
 
-* Deployment instructions
+```shell
+ruby -v
+```
 
-* ...
+The ouput should start with something like `ruby 3.0.1`
+
+If not, install the right ruby version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
+
+```shell
+rbenv install 3.0.1
+```
+Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
+
+```shell
+cd seftu
+cp -n config/samples/*.{yml,rb} config/
+bundle install --without development test
+```
+
+### Start web app
+```shell
+rails server
+```
+
+### Migration
+
+```shell
+rails db:drop
+rails db:create db:migrate db:seed
+```
