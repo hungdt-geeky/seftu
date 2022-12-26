@@ -33,5 +33,5 @@ jobs:
         run: |
           ssh $STAGING_USER@$STAGING_SERVER "cd /var/www/seftu && 
           docker-compose build && 
-          docker-compose stop seftu_web && 
+          docker-compose stop down && 
           docker-compose up -d"
