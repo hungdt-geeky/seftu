@@ -20,12 +20,11 @@ jobs:
           STAGING_SERVER: 3.0.16.137
           STAGING_USER: ubuntu
         run: |
-          ssh $STAGING_USER@$STAGING_SERVER "
-          cd /var/www/
+          ssh $STAGING_USER@$STAGING_SERVER "cd /var/www/ &&
           if [ ! -d "my-repo" ]; then
-          git clone git@github.com:damhung0113/seftu.git
-          fi
-          cd /var/www/seftu
+          git clone git@github.com:damhung0113/seftu.git &&
+          fi &&
+          cd /var/www/seftu &&
           git pull origin master"
       - name: Deploy to staging
         env:
