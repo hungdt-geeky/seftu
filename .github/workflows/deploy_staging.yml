@@ -1,17 +1,17 @@
 # Use docker environment
 
-#name: Deploy Staging
-#
-#on:
-#  push:
-#    branches:
-#      - master
-#
-#jobs:
-#  deploy:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
+name: Deploy Staging
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
 #      - name: Create SSH key
 #        run: |
 #          install -m 600 -D /dev/null ~/.ssh/id_rsa
