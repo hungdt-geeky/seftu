@@ -15,9 +15,24 @@ jobs:
           install -m 600 -D /dev/null ~/.ssh/id_rsa
           echo "${{ secrets.STAGING_SERVER_KEY }}" > ~/.ssh/id_rsa
           echo "${{ secrets.STAGING_SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+      - name: Pull repo
+        env:
+          STAGING_SERVER: 3.0.16.137
+          STAGING_USER: ubuntu
+        run: |
+          ssh $STAGING_USER@$STAGING_SERVER "
+          cd /var/www/
+          if [ ! -d "my-repo" ]; then
+          git clone git@github.com:damhung0113/seftu.git
+          fi
+          cd /var/www/seftu
+          git pull origin master"
       - name: Deploy to staging
         env:
           STAGING_SERVER: 3.0.16.137
           STAGING_USER: ubuntu
         run: |
-          ssh $STAGING_USER@$STAGING_SERVER "cd /var/www/seftu && git pull origin master && docker-compose build && docker-compose stop seftu_web && docker-compose up -d"
+          ssh $STAGING_USER@$STAGING_SERVER "cd /var/www/seftu && 
+          docker-compose build && 
+          docker-compose stop seftu_web && 
+          docker-compose up -d"
