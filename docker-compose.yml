@@ -6,8 +6,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: app_development
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+#      MYSQL_USER: root
+#      MYSQL_PASSWORD: root
     volumes:
       - db-data:/var/lib/mysql
     ports:
