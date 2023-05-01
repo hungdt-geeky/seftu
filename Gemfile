@@ -32,9 +32,6 @@ gem "bootstrap"
 gem "brakeman", require: false
 gem "fasterer", require: false
 gem "rubocop", require: false
-gem "rubocop-github"
+gem "rubocop-github", require: false
 gem "rubocop-performance", require: false
 gem "rubocop-rails", require: false
-
-# Database consistency
-gem "database_consistency", require: false

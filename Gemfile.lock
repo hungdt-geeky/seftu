@@ -83,8 +83,6 @@ GEM
     colorize (0.8.1)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
-    database_consistency (1.7.6)
-      activerecord (>= 3.2)
     date (3.3.3)
     devise (4.9.2)
       bcrypt (~> 3.0)
@@ -261,7 +259,6 @@ DEPENDENCIES
   bootsnap
   bootstrap
   brakeman
-  database_consistency
   devise
   dotenv-rails
   fasterer
