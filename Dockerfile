@@ -1,4 +1,6 @@
-FROM ruby:3.0.1
+FROM ruby:3.2.2
+
+ENV LANG C.UTF-8
 
 # Install dependencies
 RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash - && \
@@ -6,6 +8,9 @@ RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
 		apt-get update && apt-get install -qq -y \
 	  build-essential libpq-dev zlib1g-dev liblzma-dev nodejs yarn
+
+ENV TZ=Asia/Ho_Chi_Minh
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Set an environment variable to specify the app's directory
 ENV RAILS_ROOT /var/www/app
