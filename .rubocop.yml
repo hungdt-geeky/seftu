@@ -1,9 +1,14 @@
+require:
+  - rubocop-github
+  - rubocop-rails
+
 inherit_gem:
   rubocop-github:
-    - config/default_edge.yml
-    - config/rails_edge.yml
+  - config/default.yml # generic Ruby rules and cops
+  - config/rails.yml # Rails-specific rules and cops
 
 AllCops:
+  TargetRubyVersion: 3.0
   NewCops: enable
   Exclude:
     - "db/**/*"

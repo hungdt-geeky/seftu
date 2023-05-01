@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@main
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.1
+          ruby-version: 3.2.2
       - uses: reviewdog/action-rubocop@v2
         with:
           rubocop_version: gemfile
