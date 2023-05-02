@@ -24,6 +24,9 @@ Style/Documentation:
 GitHub/RailsControllerRenderLiteral:
   Enabled: false
 
+GitHub/RailsControllerRenderPathsExist:
+  Enabled: false
+
 Rails/UnknownEnv:
   Environments:
     - production

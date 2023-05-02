@@ -2,3 +2,19 @@
   display: flex;
   justify-content: center;
 }
+
+.wrapper-home-icon {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  .icon {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    z-index: 1;
+    display: block;
+    position: relative;
+    color: transparent;
+  }
+}
