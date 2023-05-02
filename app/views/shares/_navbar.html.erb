@@ -1,12 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <%= link_to "SEFTU", root_path, class: "navbar-brand" %>
-    <div class="navbar-icon collapse navbar-collapse">
-      <img src="https://world.hey.com/this.week.in.rails/avatar-20230302204801000000-561733052" class="icon i-flex" size="50x50">
-    </div>
     <div class="navbar-option">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <% if current_user %>
+          <li class="nav-item"><%= link_to "Write post", new_post_path, class: "nav-link text-white" %></li>
           <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, "data-turbo-method" => :delete, class: "nav-link text-danger" %></li>
         <% else %>
           <li class="nav-item"><%= link_to "Sign In", new_user_session_path, class: "nav-link text-primary" %></li>
